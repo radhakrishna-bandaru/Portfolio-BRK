@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/TextLayer.css";
+import pdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
 function App() {
   const [showSplash, setShowSplash] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -872,9 +869,8 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
   onClick={() =>
-  setSelectedCertificate(
-    new URL("/certificates/c-language.pdf", window.location.origin).href
-  )
+  setSelectedCertificate("/certificates/c-language.pdf")
+  
 }
 >
       <span className="certificate-index">01</span>
@@ -893,9 +889,7 @@ const scrollToTop = () => {
 <div
   className="certificate-item"
  onClick={() =>
-  setSelectedCertificate(
-    new URL("/certificates/html5.pdf", window.location.origin).href
-  )
+  setSelectedCertificate("/certificates/html5.pdf")
 }
 >
       <span className="certificate-index">02</span>
@@ -912,9 +906,7 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
  onClick={() =>
-  setSelectedCertificate(
-    new URL("/certificates/entrepreneurship.pdf", window.location.origin).href
-  )
+  setSelectedCertificate("/certificates/entrepreneurship.pdf")
 }
 >
       <span className="certificate-index">03</span>
@@ -932,9 +924,7 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
  onClick={() =>
-  setSelectedCertificate(
-    new URL("/certificates/servicenow-csa.pdf", window.location.origin).href
-  )
+  setSelectedCertificate("/certificates/servicenow-csa.pdf")
 }
 >
       <span className="certificate-index">04</span>
@@ -954,9 +944,7 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
  onClick={() =>
-  setSelectedCertificate(
-    new URL("/certificates/servicenow-cad.pdf", window.location.origin).href
-  )
+  setSelectedCertificate("/certificates/servicenow-cad.pdf")
 }
 >
       <span className="certificate-index">05</span>
@@ -975,9 +963,7 @@ const scrollToTop = () => {
 <div
   className="certificate-item"
  onClick={() =>
-  setSelectedCertificate(
-    new URL("/certificates/servicenow-micro.pdf", window.location.origin).href
-  )
+  setSelectedCertificate("/certificates/servicenow-micro.pdf")
 }
 >
   <span className="certificate-index">06</span>
@@ -993,11 +979,8 @@ const scrollToTop = () => {
   className="certificate-item"
  onClick={() =>
   setSelectedCertificate(
-    new URL(
-      "/certificates/nptel-ai-hr-management.pdf",
-      window.location.origin
-    ).href
-  )
+      "/certificates/nptel-ai-hr-management.pdf")
+  
 }
 >
   <span className="certificate-index">07</span>
@@ -1028,34 +1011,28 @@ const scrollToTop = () => {
         ×
       </button>
 
-      <div className="certificate-preview">
+     <div className="certificate-preview">
   <Document
-  file={selectedResume}
-  onLoadSuccess={({ numPages }) => setResumeNumPages(numPages)}
-  loading={
-    <div className="certificate-loading">
-      Loading resume...
-    </div>
-  }
-  error={
-    <div className="certificate-loading">
-      Unable to load resume.
-    </div>
-  }
->
-  {Array.from(
-    new Array(resumeNumPages || 0),
-    (_, index) => (
-      <Page
-        key={`resume-page-${index + 1}`}
-        pageNumber={index + 1}
-        renderTextLayer={false}
-        renderAnnotationLayer={false}
-        width={700}
-      />
-    )
-  )}
-</Document>
+    key={selectedCertificate}
+    file={{ url: selectedCertificate }}
+    loading={
+      <div className="certificate-loading">
+        Loading certificate...
+      </div>
+    }
+    error={
+      <div className="certificate-loading">
+        Unable to load certificate.
+      </div>
+    }
+  >
+    <Page
+      pageNumber={1}
+      renderTextLayer={false}
+      renderAnnotationLayer={false}
+      width={700}
+    />
+  </Document>
 </div>
 
     <div className="certificate-modal-actions">
