@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Document, Page, pdfjs } from "react-pdf";
-import pdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker;
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 function App() {
   const [showSplash, setShowSplash] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -869,8 +872,10 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/c-language.pdf`)
-  }
+  setSelectedCertificate(
+    new URL("/certificates/c-language.pdf", window.location.origin).href
+  )
+}
 >
       <span className="certificate-index">01</span>
 
@@ -887,9 +892,11 @@ const scrollToTop = () => {
 
 <div
   className="certificate-item"
-  onClick={() =>
-    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/html5.pdf`)
-  }
+ onClick={() =>
+  setSelectedCertificate(
+    new URL("/certificates/html5.pdf", window.location.origin).href
+  )
+}
 >
       <span className="certificate-index">02</span>
 
@@ -904,9 +911,11 @@ const scrollToTop = () => {
 
     <div
   className="certificate-item"
-  onClick={() =>
-    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/entrepreneurship.pdf`)
-  }
+ onClick={() =>
+  setSelectedCertificate(
+    new URL("/certificates/entrepreneurship.pdf", window.location.origin).href
+  )
+}
 >
       <span className="certificate-index">03</span>
 
@@ -922,9 +931,11 @@ const scrollToTop = () => {
 
     <div
   className="certificate-item"
-  onClick={() =>
-    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/servicenow-csa.pdf`)
-  }
+ onClick={() =>
+  setSelectedCertificate(
+    new URL("/certificates/servicenow-csa.pdf", window.location.origin).href
+  )
+}
 >
       <span className="certificate-index">04</span>
 
@@ -942,9 +953,11 @@ const scrollToTop = () => {
 
     <div
   className="certificate-item"
-  onClick={() =>
-    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/servicenow-cad.pdf`)
-  }
+ onClick={() =>
+  setSelectedCertificate(
+    new URL("/certificates/servicenow-cad.pdf", window.location.origin).href
+  )
+}
 >
       <span className="certificate-index">05</span>
 
@@ -961,9 +974,11 @@ const scrollToTop = () => {
 
 <div
   className="certificate-item"
-  onClick={() =>
-    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/servicenow-micro.pdf`)
-  }
+ onClick={() =>
+  setSelectedCertificate(
+    new URL("/certificates/servicenow-micro.pdf", window.location.origin).href
+  )
+}
 >
   <span className="certificate-index">06</span>
 
@@ -976,9 +991,14 @@ const scrollToTop = () => {
 
 <div
   className="certificate-item"
-  onClick={() =>
-    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/nptel-ai-hr-management.pdf`)
-  }
+ onClick={() =>
+  setSelectedCertificate(
+    new URL(
+      "/certificates/nptel-ai-hr-management.pdf",
+      window.location.origin
+    ).href
+  )
+}
 >
   <span className="certificate-index">07</span>
 
