@@ -110,7 +110,6 @@ const scrollToTop = () => {
   className="scroll-progress"
   style={{ width: `${scrollProgress}%` }}
 ></div>
-      {/* ================= SPLASH SCREEN ================= */}
 
       {showSplash && (
         <div className="splash-screen">
@@ -140,11 +139,10 @@ const scrollToTop = () => {
 )}
 
 
-      {/* ================= MAIN PORTFOLIO ================= */}
+    
+     <div className="portfolio">
 
-      <div className="portfolio">
-
-        {/* NAVBAR */}
+       
 
       <header className="navbar">
 
@@ -213,7 +211,6 @@ const scrollToTop = () => {
 </header>
 
 
-        {/* ================= HERO ================= */}
 
         <section id="home" className="hero">
 
@@ -308,7 +305,7 @@ const scrollToTop = () => {
         </section>
 
 
-        {/* ================= ABOUT ================= */}
+
 
         <section id="about" className="section">
 
@@ -394,8 +391,7 @@ const scrollToTop = () => {
         </section>
 
 
-        {/* ================= EDUCATION ================= */}
-
+   
         <section id="education" className="section dark">
 
           <div className="section-label">
@@ -478,7 +474,7 @@ const scrollToTop = () => {
         </section>
 
 
-        {/* ================= PROJECTS ================= */}
+    
 
         <section id="projects" className="section">
 
@@ -490,7 +486,7 @@ const scrollToTop = () => {
 
   <div className="projects-grid">
 
-    {/* ================= PROJECT 01 ================= */}
+    
 
     <article className="project-card featured-project">
 
@@ -583,7 +579,7 @@ const scrollToTop = () => {
     </article>
 
 
-    {/* ================= PROJECT 02 ================= */}
+   
 
     <article className="project-card featured-project">
 
@@ -680,7 +676,7 @@ const scrollToTop = () => {
 </section>
 
 
-        {/* ================= SKILLS ================= */}
+  
 
         <section id="skills" className="section dark">
 
@@ -766,7 +762,6 @@ const scrollToTop = () => {
 </section>
 
 
-        {/* ================= EXPERIENCE ================= */}
 
        <section id="experience" className="section">
 
@@ -861,8 +856,7 @@ const scrollToTop = () => {
 </section>
 
 
-        {/* ================= CERTIFICATES ================= */}
-
+     
        <section className="section dark">
 
   <div className="section-label">
@@ -875,7 +869,7 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate("/certificates/c-language.pdf")
+    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/c-language.pdf`)
   }
 >
       <span className="certificate-index">01</span>
@@ -894,7 +888,7 @@ const scrollToTop = () => {
 <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate("/certificates/html5.pdf")
+    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/html5.pdf`)
   }
 >
       <span className="certificate-index">02</span>
@@ -911,7 +905,7 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate("/certificates/entrepreneurship.pdf")
+    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/entrepreneurship.pdf`)
   }
 >
       <span className="certificate-index">03</span>
@@ -929,7 +923,7 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate("/certificates/servicenow-csa.pdf")
+    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/servicenow-csa.pdf`)
   }
 >
       <span className="certificate-index">04</span>
@@ -949,7 +943,7 @@ const scrollToTop = () => {
     <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate("/certificates/servicenow-cad.pdf")
+    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/servicenow-cad.pdf`)
   }
 >
       <span className="certificate-index">05</span>
@@ -968,7 +962,7 @@ const scrollToTop = () => {
 <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate("/certificates/servicenow-micro.pdf")
+    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/servicenow-micro.pdf`)
   }
 >
   <span className="certificate-index">06</span>
@@ -983,7 +977,7 @@ const scrollToTop = () => {
 <div
   className="certificate-item"
   onClick={() =>
-    setSelectedCertificate("/certificates/nptel-ai-hr-management.pdf")
+    setSelectedCertificate(`${import.meta.env.BASE_URL}certificates/nptel-ai-hr-management.pdf`)
   }
 >
   <span className="certificate-index">07</span>
@@ -1115,7 +1109,7 @@ const scrollToTop = () => {
     </div>
   </div>
 )}
-        {/* ================= ACHIEVEMENTS ================= */}
+       
 
        <section className="section">
 
@@ -1220,7 +1214,7 @@ const scrollToTop = () => {
 </section>
 
 
-        {/* ================= CONTACT ================= */}
+       
 
        <section id="contact" className="contact">
 
@@ -1333,7 +1327,7 @@ const scrollToTop = () => {
 
 </section>
 
-        {/* ================= FOOTER ================= */}
+
 
        <footer className="footer">
 
